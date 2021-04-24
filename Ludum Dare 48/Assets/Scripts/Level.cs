@@ -11,17 +11,16 @@ struct LastColumn
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] int floorDropChance = 15;
-    [SerializeField] int lookAhead = 3;
-    [SerializeField] int lookBack = 5;
-    [SerializeField] TileBase tile;
+    [SerializeField] private  int floorDropChance = 15;
+    [SerializeField] private int lookAhead = 3;
+    [SerializeField] private TileBase tile;
 
-    [SerializeField] Camera cam;
+    [SerializeField] private Camera cam;
 
     private int worldHeight = 4;
     private int spawnWidth = 6;
 
-    LastColumn lastColumn;
+    private LastColumn lastColumn;
 
     private System.Random rng;
     
@@ -39,7 +38,7 @@ public class Level : MonoBehaviour
     void Update()
     {
         MoveAhead();
-        Debug.Log("lastColumn.ahead: " + (lastColumn.ahead.x, lastColumn.ahead.y).ToString());
+        //Debug.Log("lastColumn.ahead: " + (lastColumn.ahead.x, lastColumn.ahead.y).ToString());
     }
 
     private void Init()

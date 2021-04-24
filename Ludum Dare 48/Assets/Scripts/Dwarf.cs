@@ -5,12 +5,14 @@ using UnityEngine;
 public class Dwarf : MonoBehaviour
 {
 
+    [SerializeField] private LayerMask tilemapLayerMask;
+
     [SerializeField] private float moveSpeed = 1.0f;
     [SerializeField] private float maxJumpForce = 250f;
 
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
-
+    private CapsuleCollider2D capsuleCollider2D;
 
     private float xVelocity = 0f;
     private float jumpForce = 0f;
@@ -19,7 +21,8 @@ public class Dwarf : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();      
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();    
     }
 
     // Update is called once per frame
@@ -45,7 +48,7 @@ public class Dwarf : MonoBehaviour
             spriteRenderer.flipX = false;
         }
         
-        if (Input.GetButtonDown("Jump"))
+        if (isGrounded() && Input.GetButtonDown("Jump"))
         {
             Debug.Log("Jump");
             jumpForce = maxJumpForce;
@@ -61,5 +64,13 @@ public class Dwarf : MonoBehaviour
             rigidBody.AddForce(new Vector2(0, jumpForce));
             jumpForce = 0f;
         }
+    }
+
+    private bool isGrounded()
+    {
+        float rayExtension = 0.1f;
+        RaycastHit2D hit = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.down, capsuleCollider2D.bounds.extents.y + rayExtension, tilemapLayerMask);
+
+        return hit.collider != null;
     }
 }
