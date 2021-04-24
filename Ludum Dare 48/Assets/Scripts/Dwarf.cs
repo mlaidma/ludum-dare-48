@@ -23,10 +23,9 @@ public class Dwarf : MonoBehaviour
 
     private void Move()
     {
-        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), 0).normalized;
-        Vector2 moveVelocity = moveInput * moveSpeed;
+        float xVelocity = Input.GetAxisRaw("Horizontal") * moveSpeed;
 
-        rigidBody.velocity = moveVelocity;
+        rigidBody.velocity = new Vector2(xVelocity, rigidBody.velocity.y);
 
     }
 }
