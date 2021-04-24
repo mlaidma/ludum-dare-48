@@ -1453,7 +1453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c23c30fce174ed41aec54d7ce966489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorDropChance: 25
+  floorDropChance: 35
   lookAhead: 2
   lookBack: 2
   tile: {fileID: 11400000, guid: 7117efa3cbaf7744ab936f0eb5d9348d, type: 2}

@@ -9,6 +9,7 @@ public class Dwarf : MonoBehaviour
     [SerializeField] private float maxJumpForce = 250f;
 
     private Rigidbody2D rigidBody;
+    private SpriteRenderer spriteRenderer;
 
 
     private float xVelocity = 0f;
@@ -17,7 +18,8 @@ public class Dwarf : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>();        
+        rigidBody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();      
     }
 
     // Update is called once per frame
@@ -33,6 +35,15 @@ public class Dwarf : MonoBehaviour
     void GetPlayerInput()
     {
         xVelocity = Input.GetAxisRaw("Horizontal") * moveSpeed;
+
+        if(xVelocity < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
         
         if (Input.GetButtonDown("Jump"))
         {
