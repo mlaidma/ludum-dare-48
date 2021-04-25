@@ -12,6 +12,7 @@ public class Dwarf : MonoBehaviour
 
     [SerializeField] GameObject staffPrefab;
     [SerializeField] GameObject hammerPrefab;
+    private PlayerItem item; 
 
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
@@ -24,6 +25,9 @@ public class Dwarf : MonoBehaviour
 
     private float xVelocity = 0f;
     private float jumpForce = 0f;
+
+    private const float maxGems = 100.0f;
+    private float playerGems = 20f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,10 +46,25 @@ public class Dwarf : MonoBehaviour
     void Update()
     {
         GetPlayerInput();
+        //item.SetLight(playerGems / maxGems);
+
     }
 
     void FixedUpdate() {
         Move();    
+    }
+
+    IEnumerator SpendGems()
+    {
+        while(true)
+        {   
+            if(playerGems != 0)
+            {
+                playerGems--;
+            }
+
+            yield return new WaitForSeconds(1f);
+        }
     }
 
     void GetPlayerInput()
@@ -108,5 +127,6 @@ public class Dwarf : MonoBehaviour
         if(activeItem != null) Destroy(activeItem);
 
         activeItem = Instantiate(prefab, itemCoord.position, itemCoord.rotation, this.transform);
+        item = activeItem.GetComponent<PlayerItem>();
     }
 }
