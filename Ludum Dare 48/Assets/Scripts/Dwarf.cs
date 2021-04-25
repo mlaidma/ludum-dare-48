@@ -12,7 +12,7 @@ public class Dwarf : MonoBehaviour
 
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
-    private CapsuleCollider2D capsuleCollider2D;
+    private BoxCollider2D capsuleCollider2D;
 
     private float xVelocity = 0f;
     private float jumpForce = 0f;
@@ -21,8 +21,8 @@ public class Dwarf : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        capsuleCollider2D = GetComponent<CapsuleCollider2D>();    
+        capsuleCollider2D = GetComponent<BoxCollider2D>();    
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
