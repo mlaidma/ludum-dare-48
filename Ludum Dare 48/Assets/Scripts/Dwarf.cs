@@ -10,9 +10,17 @@ public class Dwarf : MonoBehaviour
     [SerializeField] private float moveSpeed = 1.0f;
     [SerializeField] private float maxJumpForce = 250f;
 
+    [SerializeField] GameObject staffPrefab;
+    [SerializeField] GameObject hammerPrefab;
+
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D capsuleCollider2D;
+
+    private Transform itemCoord;
+    private GameObject activeItem; 
+
+    private Animator animator;
 
     private float xVelocity = 0f;
     private float jumpForce = 0f;
@@ -22,7 +30,12 @@ public class Dwarf : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         capsuleCollider2D = GetComponent<BoxCollider2D>();    
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        itemCoord = transform.Find("Item");
+
+        SetItem(hammerPrefab);
+
     }
 
     // Update is called once per frame
@@ -37,7 +50,23 @@ public class Dwarf : MonoBehaviour
 
     void GetPlayerInput()
     {
+
+        // Item
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            SetItem(staffPrefab);
+        }
+        
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            SetItem(hammerPrefab);
+        }
+
+        // Movement
         xVelocity = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        float absVelocity = Mathf.Abs(xVelocity);
+
+        animator.SetFloat("playerVelocity", absVelocity);
 
         if(xVelocity < 0)
         {
@@ -72,5 +101,12 @@ public class Dwarf : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.down, capsuleCollider2D.bounds.extents.y + rayExtension, tilemapLayerMask);
 
         return hit.collider != null;
+    }
+
+    private void SetItem(GameObject prefab)
+    {
+        if(activeItem != null) Destroy(activeItem);
+
+        activeItem = Instantiate(prefab, itemCoord.position, itemCoord.rotation, this.transform);
     }
 }
