@@ -6,6 +6,8 @@ using UnityEngine.Tilemaps;
 struct LastColumn
 {
     public Vector2Int ahead;
+
+    //unused
     public Vector2Int behind;
 }
 
@@ -35,7 +37,7 @@ public class Level : MonoBehaviour
     void Start()
     {
         Init();
-        GenerateSpawn();
+        //GenerateSpawn();
     }
 
     // Update is called once per frame
@@ -49,10 +51,10 @@ public class Level : MonoBehaviour
     {
         rng = new System.Random();
         tilemap = GetComponent<Tilemap>();
-        tilemap.ClearAllTiles();
+        //tilemap.ClearAllTiles();
 
-        lastColumn.ahead = new Vector2Int(0, 0);
-        lastColumn.behind = new Vector2Int(0, 0);
+        lastColumn.ahead = new Vector2Int(5, 0);
+        //lastColumn.behind = new Vector2Int(0, 0);
     }
 
     private void GenerateSpawn()
@@ -65,8 +67,7 @@ public class Level : MonoBehaviour
             DrawColumn(ahead.x, ahead.y);
             DrawColumn(behind.x, behind.y);
 
-            lastColumn.ahead = ahead;
-            lastColumn.behind = behind;
+
         }
     }
 
