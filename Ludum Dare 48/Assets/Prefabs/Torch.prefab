@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfe0abdb2f50b9409f965152aa856e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minFlickerWait: 0.1
+  maxFlickerWait: 0.2
 --- !u!1 &2722815529459989667
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.75
+  m_FalloffIntensity: 0.797
   m_Color: {r: 0.735849, g: 0.47931466, b: 0.13536847, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0

@@ -123,67 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &136083854
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 395982962}
-    m_Modifications:
-    - target: {fileID: 1225917811670782348, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_Name
-      value: Torch
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225917811670782348, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
 --- !u!1 &158649138
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,38 +213,6 @@ PrefabInstance:
     - target: {fileID: 1225917811670782348, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
       propertyPath: m_Name
       value: Torch (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225917811670782348, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4185919160663734409, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_Color.b
-      value: 0.13536847
-      objectReference: {fileID: 0}
-    - target: {fileID: 4185919160663734409, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_Color.g
-      value: 0.47931466
-      objectReference: {fileID: 0}
-    - target: {fileID: 4185919160663734409, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_Color.r
-      value: 0.735849
-      objectReference: {fileID: 0}
-    - target: {fileID: 4185919160663734409, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_Intensity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4185919160663734409, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.797
-      objectReference: {fileID: 0}
-    - target: {fileID: 4185919160663734409, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_LightVolumeOpacity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4185919160663734409, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-      propertyPath: m_PointLightInnerAngle
-      value: 163
       objectReference: {fileID: 0}
     - target: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
       propertyPath: m_RootOrder
@@ -439,8 +346,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1285449826}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1993,11 +1899,6 @@ MonoBehaviour:
   tile: {fileID: 11400000, guid: 7117efa3cbaf7744ab936f0eb5d9348d, type: 2}
   woodColumn: {fileID: 11400000, guid: 041b966d56ca0fb4e80094d2a6dd59df, type: 2}
   cam: {fileID: 519420031}
---- !u!4 &1285449826 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4482454952099741877, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
-  m_PrefabInstance: {fileID: 136083854}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1526783277
 GameObject:
   m_ObjectHideFlags: 3
