@@ -130,6 +130,8 @@ MonoBehaviour:
     m_Bits: 64
   moveSpeed: 3
   maxJumpForce: 200
+  staffPrefab: {fileID: 8430942169629484262, guid: d1ab4ff0b8978c04994112ca955480bd, type: 3}
+  hammerPrefab: {fileID: 532011425475993990, guid: 190c75aa1fee6d64e922d69b505fd585, type: 3}
 --- !u!212 &722120656
 SpriteRenderer:
   m_ObjectHideFlags: 0

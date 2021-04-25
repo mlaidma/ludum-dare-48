@@ -29,6 +29,8 @@ public class Dwarf : MonoBehaviour
     private const float maxGems = 100.0f;
     private float playerGems = 20f;
 
+    private bool gameOn = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,13 +47,15 @@ public class Dwarf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         GetPlayerInput();
         //item.SetLight(playerGems / maxGems);
 
     }
 
     void FixedUpdate() {
-        Move();    
+
+        if(gameOn) Move();    
     }
 
     IEnumerator SpendGems()
@@ -129,4 +133,10 @@ public class Dwarf : MonoBehaviour
         activeItem = Instantiate(prefab, itemCoord.position, itemCoord.rotation, this.transform);
         item = activeItem.GetComponent<PlayerItem>();
     }
+
+    public void GameOn(bool value)
+    {
+        gameOn = value;
+    }
+
 }
