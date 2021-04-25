@@ -44,6 +44,33 @@ TextureImporter:
   - first:
       213: -394596308874189316
     second: world_wood_floor
+  - first:
+      213: -4995460683556774114
+    second: world_floor_corner_1
+  - first:
+      213: 7565928925558923220
+    second: world_15
+  - first:
+      213: 8250337849583089887
+    second: world_floor_corner_
+  - first:
+      213: -3283720381262447542
+    second: world_floor_corner_2
+  - first:
+      213: 389251741916555048
+    second: world_ceil_corner_1
+  - first:
+      213: -5123997303779143937
+    second: world_19
+  - first:
+      213: 1462240066670041786
+    second: world_ceil_corner_2
+  - first:
+      213: 4574492410154810
+    second: world_floor_corner_3
+  - first:
+      213: -2166430989148195550
+    second: world_ceil_corner_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -370,6 +397,314 @@ TextureImporter:
       bones: []
       spriteID: cf5afdb6fbc168af0800000000000000
       internalID: -394596308874189316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_floor_corner_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 14}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 9}
+        - {x: 11, y: 14}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f1b23b9fe8caab0800000000000000
+      internalID: -4995460683556774114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_floor_corner_
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 14}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 14}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd83c51ef861f7270800000000000000
+      internalID: 8250337849583089887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_floor_corner_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -14, y: 14}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 14}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c342d06b1ed62d0800000000000000
+      internalID: -3283720381262447542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_ceil_corner_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -9, y: 9}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 827632d9566e66500800000000000000
+      internalID: 389251741916555048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_ceil_corner_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba1636e79bea4410800000000000000
+      internalID: 1462240066670041786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_floor_corner_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 14}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 9}
+        - {x: 11, y: 14}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f82230a70401000800000000000000
+      internalID: 4574492410154810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cf33135aeb99260800000000000000
+      internalID: 7104919503858039896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de7696ba2eb0d420800000000000000
+      internalID: 2652829271182442201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a29d5c7b9dcebe50800000000000000
+      internalID: 6827120152830382756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2901010355a256470800000000000000
+      internalID: 8387156426414362770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dfdac395449ff860800000000000000
+      internalID: 7565928925558923220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe4f2ea997e3e8b0800000000000000
+      internalID: -5123997303779143937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world_ceil_corner_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -9, y: 9}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2257c6d5e7a4fe1e0800000000000000
+      internalID: -2166430989148195550
       vertices: []
       indices: 
       edges: []
