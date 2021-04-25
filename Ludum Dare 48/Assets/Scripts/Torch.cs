@@ -7,11 +7,11 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class Torch : MonoBehaviour
 {
 
-    private const float minIntensity = 0.9f;
+    private const float minIntensity = 0.8f;
     private const float maxIntensity = 1f;
 
-    [SerializeField] float minFlickerWait = 0.2f;
-    [SerializeField] float maxFlickerWait = 0.4f;
+    [SerializeField] float minFlickerWait = 0.1f;
+    [SerializeField] float maxFlickerWait = 0.15f;
 
     Light2D light2D;
     System.Random rng;

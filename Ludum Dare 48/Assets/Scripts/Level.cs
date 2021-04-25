@@ -16,12 +16,14 @@ public class Level : MonoBehaviour
     [SerializeField] private int floorDropChance = 35;
     [SerializeField] private int woodColumnChance = 25;
     [SerializeField] private int torchChance = 5;
+    [SerializeField] private int gemChance = 15;
 
     [SerializeField] private int lookAhead = 3;
 
     [SerializeField] private TileBase tile;
     [SerializeField] private CustomColumn woodColumn;
     [SerializeField] private Torch torchPrefab;
+    [SerializeField] private GameObject gemPrefab;
 
     [SerializeField] private Camera cam;
 
@@ -110,6 +112,16 @@ public class Level : MonoBehaviour
         {
             Instantiate(torchPrefab, new Vector3(x, y + 3, 0), Quaternion.identity);
             Debug.Log("Torch spawned");
+        }
+
+        if(GetChance(gemChance))
+        {
+            float minX = 0.18f;
+            float maxX = 0.28f;
+            float xRandom = Random.Range(minX, maxX);
+
+            Instantiate(gemPrefab, new Vector3(x + xRandom, y + 1.35f, 0), Quaternion.identity);
+            Debug.Log("Gem Spawned");
         }
     }
 
