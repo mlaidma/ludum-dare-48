@@ -1895,9 +1895,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorDropChance: 35
   woodColumnChance: 25
+  torchChance: 5
   lookAhead: 2
   tile: {fileID: 11400000, guid: 7117efa3cbaf7744ab936f0eb5d9348d, type: 2}
   woodColumn: {fileID: 11400000, guid: 041b966d56ca0fb4e80094d2a6dd59df, type: 2}
+  torchPrefab: {fileID: 563459399, guid: f0498ee016c3c2544b788cf0c7d69794, type: 3}
   cam: {fileID: 519420031}
 --- !u!1 &1526783277
 GameObject:

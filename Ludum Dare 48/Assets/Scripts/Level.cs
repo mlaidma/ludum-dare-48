@@ -15,11 +15,13 @@ public class Level : MonoBehaviour
 {
     [SerializeField] private int floorDropChance = 35;
     [SerializeField] private int woodColumnChance = 25;
+    [SerializeField] private int torchChance = 5;
 
     [SerializeField] private int lookAhead = 3;
 
     [SerializeField] private TileBase tile;
     [SerializeField] private CustomColumn woodColumn;
+    [SerializeField] private Torch torchPrefab;
 
     [SerializeField] private Camera cam;
 
@@ -37,7 +39,6 @@ public class Level : MonoBehaviour
     void Start()
     {
         Init();
-        //GenerateSpawn();
     }
 
     // Update is called once per frame
@@ -51,12 +52,11 @@ public class Level : MonoBehaviour
     {
         rng = new System.Random();
         tilemap = GetComponent<Tilemap>();
-        //tilemap.ClearAllTiles();
 
         lastColumn.ahead = new Vector2Int(5, 0);
-        //lastColumn.behind = new Vector2Int(0, 0);
     }
 
+    // Unused
     private void GenerateSpawn()
     {
         for(int x = 0; x < spawnWidth; x++)
@@ -66,8 +66,6 @@ public class Level : MonoBehaviour
 
             DrawColumn(ahead.x, ahead.y);
             DrawColumn(behind.x, behind.y);
-
-
         }
     }
 
@@ -82,12 +80,12 @@ public class Level : MonoBehaviour
             int y = lastColumn.ahead.y;
             x += 1;
 
-            if (DropFloor())
+            if (GetChance(floorDropChance))
             {
                 y -= 1;
                 DrawColumn(x, y);
             }
-            else if(GenerateWoodColumn())
+            else if(GetChance(woodColumnChance))
             {
                 DrawWoodColumn(x, y);
             }
@@ -107,6 +105,12 @@ public class Level : MonoBehaviour
             Vector3Int newTileCoord = new Vector3Int(x, y + i, 0);
             tilemap.SetTile(newTileCoord, tile);
         }
+
+        if(GetChance(torchChance))
+        {
+            Instantiate(torchPrefab, new Vector3(x, y + 3, 0), Quaternion.identity);
+            Debug.Log("Torch spawned");
+        }
     }
 
     private void DrawWoodColumn(int x, int y)
@@ -121,16 +125,11 @@ public class Level : MonoBehaviour
         }
     }
 
-    private bool DropFloor()
+    private bool GetChance(int chance)
     {
         int random = rng.Next(0, 100);
-        return random < floorDropChance;
-    }
 
-    private bool GenerateWoodColumn()
-    {
-        int random = rng.Next(0, 100);
-        return random < woodColumnChance;
+        return random < chance; 
     }
 
     private int GetViewportAhead()
