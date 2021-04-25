@@ -11,9 +11,13 @@ struct LastColumn
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] private  int floorDropChance = 15;
+    [SerializeField] private int floorDropChance = 35;
+    [SerializeField] private int woodColumnChance = 25;
+
     [SerializeField] private int lookAhead = 3;
+
     [SerializeField] private TileBase tile;
+    [SerializeField] private CustomColumn woodColumn;
 
     [SerializeField] private Camera cam;
 
@@ -58,8 +62,8 @@ public class Level : MonoBehaviour
             Vector2Int ahead = new Vector2Int(x, 0);
             Vector2Int behind = new Vector2Int(-x - 1, 0);
 
-            DrawColumn(ahead);
-            DrawColumn(behind);
+            DrawColumn(ahead.x, ahead.y);
+            DrawColumn(behind.x, behind.y);
 
             lastColumn.ahead = ahead;
             lastColumn.behind = behind;
@@ -75,36 +79,57 @@ public class Level : MonoBehaviour
         {
             int x = lastColumn.ahead.x;
             int y = lastColumn.ahead.y;
-
-            if(DropFloor())
-            {
-                y -= 1;   
-            }
-
             x += 1;
 
-            Vector2Int newColumn = new Vector2Int(x, y);
+            if (DropFloor())
+            {
+                y -= 1;
+                DrawColumn(x, y);
+            }
+            else if(GenerateWoodColumn())
+            {
+                DrawWoodColumn(x, y);
+            }
+            else
+            {
+                DrawColumn(x, y);
+            }
 
-            DrawColumn(newColumn);
-            lastColumn.ahead = newColumn;
+            lastColumn.ahead = new Vector2Int(x, y);
         }
     }
 
-    private void DrawColumn(Vector2Int coord)
+    private void DrawColumn(int x, int y)
     {
         for(int i = 0; i < worldHeight; i++)
         {
-            Vector2Int newTile = new Vector2Int(coord.x, coord.y + i);
-            tilemap.SetTile(new Vector3Int(newTile.x, newTile.y, 0), tile);
+            Vector3Int newTileCoord = new Vector3Int(x, y + i, 0);
+            tilemap.SetTile(newTileCoord, tile);
+        }
+    }
+
+    private void DrawWoodColumn(int x, int y)
+    {
+
+        Debug.Log("Draw Wood Column: " + woodColumn.columnTiles.Count);
+
+        for(int i = 0; i < woodColumn.columnTiles.Count; i++)
+        {
+            Vector3Int newTileCoord = new Vector3Int(x, y + i, 0);
+            tilemap.SetTile(newTileCoord, woodColumn.columnTiles[i]);
         }
     }
 
     private bool DropFloor()
     {
         int random = rng.Next(0, 100);
-
-        Debug.Log("Floordrop:" + floorDropChance);  
         return random < floorDropChance;
+    }
+
+    private bool GenerateWoodColumn()
+    {
+        int random = rng.Next(0, 100);
+        return random < woodColumnChance;
     }
 
     private int GetViewportAhead()
