@@ -147,4 +147,13 @@ public class Dwarf : MonoBehaviour
         gameOn = value;
     }
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        
+        if(other.tag == "gems")
+        {
+            playerGems += new System.Random().Next(3, 12);
+            Destroy(other.gameObject);
+        }
+    }
+
 }
