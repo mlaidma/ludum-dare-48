@@ -29,6 +29,14 @@ public class Dwarf : MonoBehaviour
     private const float maxGems = 100.0f;
     private float playerGems = 20f;
 
+    public float PlayerGems {
+        get {return playerGems;} 
+    }
+
+    public int PlayerDepth {
+        get { return Mathf.FloorToInt(transform.position.y);}
+    }
+
     private bool gameOn = false;
 
     // Start is called before the first frame update

@@ -8,6 +8,10 @@ public class GameController : MonoBehaviour
 {
 
     [SerializeField] GameObject startMenu;
+    [SerializeField] GameObject gameMenu;
+
+    [SerializeField] TextMeshProUGUI depthText;
+    [SerializeField] TextMeshProUGUI gemsText;
 
 
     private bool gameStarted = false;
@@ -25,6 +29,9 @@ public class GameController : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) PauseGame();
+
+        GetPlayerDepth();
+        GetPlayerGems();
     }
 
     public void StartGame()
@@ -32,6 +39,7 @@ public class GameController : MonoBehaviour
         gameStarted = true;
         player.GameOn(true);
         startMenu.SetActive(false);
+        gameMenu.SetActive(true);
     }
 
     public void PauseGame()
@@ -39,10 +47,21 @@ public class GameController : MonoBehaviour
         gameStarted = false;
         player.GameOn(false);
         startMenu.SetActive(true);
+        gameMenu.SetActive(false);
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void GetPlayerDepth()
+    {
+        depthText.SetText("Depth: " + player.PlayerDepth.ToString() + " M");
+    }
+
+    private void GetPlayerGems()
+    {
+        gemsText.SetText("Gems: " + player.PlayerGems.ToString());
     }
 }
