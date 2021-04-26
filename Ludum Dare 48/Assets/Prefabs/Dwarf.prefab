@@ -132,8 +132,8 @@ MonoBehaviour:
     m_Bits: 64
   moveSpeed: 3
   maxJumpForce: 200
-  staffPrefab: {fileID: 0}
-  hammerPrefab: {fileID: 0}
+  staffPrefab: {fileID: 5133313167613843912}
+  hammerPrefab: {fileID: 1893149598119082588}
 --- !u!212 &722120656
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -266,6 +266,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 532011425475993985, guid: 190c75aa1fee6d64e922d69b505fd585, type: 3}
   m_PrefabInstance: {fileID: 7769001033012123136}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1893149598119082588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8184404743709994076, guid: 190c75aa1fee6d64e922d69b505fd585, type: 3}
+  m_PrefabInstance: {fileID: 7769001033012123136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216255cf79a44ad419754e4acfec2858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8097370015998480127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,3 +339,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6195605240933848205, guid: d1ab4ff0b8978c04994112ca955480bd, type: 3}
   m_PrefabInstance: {fileID: 8097370015998480127}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5133313167613843912 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3990912750078940983, guid: d1ab4ff0b8978c04994112ca955480bd, type: 3}
+  m_PrefabInstance: {fileID: 8097370015998480127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216255cf79a44ad419754e4acfec2858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
