@@ -10,16 +10,15 @@ public class Dwarf : MonoBehaviour
     [SerializeField] private float moveSpeed = 1.0f;
     [SerializeField] private float maxJumpForce = 250f;
 
-    [SerializeField] GameObject staffPrefab;
-    [SerializeField] GameObject hammerPrefab;
-    private PlayerItem item; 
+    [SerializeField] PlayerItem staffPrefab;
+    [SerializeField] PlayerItem hammerPrefab;
 
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D capsuleCollider2D;
 
     private Transform itemCoord;
-    private GameObject activeItem; 
+    private PlayerItem activeItem; 
 
     private Animator animator;
 
@@ -48,33 +47,39 @@ public class Dwarf : MonoBehaviour
         animator = GetComponent<Animator>();
         itemCoord = transform.Find("Item");
 
-        SetItem(hammerPrefab);
+        SetHammer();
 
+        StartCoroutine(SpendGems());
     }
 
     // Update is called once per frame
     void Update()
     {
-
         GetPlayerInput();
-        //item.SetLight(playerGems / maxGems);
+        activeItem.SetLight(playerGems / maxGems);
 
     }
 
     void FixedUpdate() {
 
-        if(gameOn) Move();    
+        if(gameOn)
+        {
+
+            Move();
+        }
     }
 
     IEnumerator SpendGems()
     {
         while(true)
         {   
-            if(playerGems != 0)
+            if(gameOn)
             {
-                playerGems--;
+                if (playerGems != 0)
+                {
+                    playerGems -= 2;
+                }
             }
-
             yield return new WaitForSeconds(1f);
         }
     }
@@ -85,12 +90,12 @@ public class Dwarf : MonoBehaviour
         // Item
         if(Input.GetKeyDown(KeyCode.E))
         {
-            SetItem(staffPrefab);
+            SetStaff();
         }
         
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            SetItem(hammerPrefab);
+            SetHammer();
         }
 
         // Movement
@@ -134,13 +139,20 @@ public class Dwarf : MonoBehaviour
         return hit.collider != null;
     }
 
-    private void SetItem(GameObject prefab)
+    private void SetHammer()
     {
-        if(activeItem != null) Destroy(activeItem);
-
-        activeItem = Instantiate(prefab, itemCoord.position, itemCoord.rotation, this.transform);
-        item = activeItem.GetComponent<PlayerItem>();
+        activeItem = hammerPrefab;
+        hammerPrefab.gameObject.SetActive(true);
+        staffPrefab.gameObject.SetActive(false);
     }
+
+    private void SetStaff()
+    {
+        activeItem = staffPrefab;
+        hammerPrefab.gameObject.SetActive(false);
+        staffPrefab.gameObject.SetActive(true);
+    }
+
 
     public void GameOn(bool value)
     {
